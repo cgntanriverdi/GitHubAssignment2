@@ -60,10 +60,34 @@ public class HW1
         System.out.println("The maximum value in the array is: " + maxValue);
     }
 
-    // Kaan Uz
-    public static void taskD()
+    /*
+     * author: Kaan Uz
+     * Date: 05.02.2025
+     * Method for finding the average of the array and printing how each element of the array differs from the average.
+     */
+    public static void differenceFromAverage(int[] nums)
     {
+        int sum = 0, average = 0;
 
+        if(nums.length > 0)
+        {
+            for(int i = 0; i < nums.length; i++)
+            {
+                sum += nums[i];
+            }
+            
+            average = sum / nums.length;
+            System.out.print("The difference between average and each element of the array:");
+
+            for(int k = 0; k < nums.length; k++)
+            {
+                System.out.print(" " + (nums[k] - average));
+            }
+        }
+        else
+        {
+            System.out.println("Array is empty!");
+        }
     }
 
     /*
