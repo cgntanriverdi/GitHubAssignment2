@@ -9,7 +9,76 @@ public class HW1
     // Task B (Main) - Baran Elkansu
     public static void main(String [] args)
     {
+        Scanner sc = new Scanner(System.in);
+        boolean cont = true;
+        while(cont)
+        {
+            System.out.println("Options: ");
+            System.out.println("1.Create a/another array");
+            System.out.println("2.Find the difference between each element and the average of the array");
+            System.out.println("3.Find the minimum value of the array");
+            System.out.println("4.Find the maximum value of the array");
+            System.out.println("5.Find the sum of elements at even and odd indexes");
+            System.out.println("6.Exit");
+            System.out.print("Your choice: ");
+            int choice = sc.nextInt();sc.nextLine();
 
+            switch(choice)
+            {
+                case 1:
+                    createRandomArray();
+                    break;
+                case 2:
+                    if(nums!=null)
+                    {
+                        differenceFromAverage(nums);
+                    }
+                    else 
+                    {
+                        System.out.println("Please create an array first.");
+                    }
+                    break;
+                case 3:
+                    if(nums!=null)
+                    {
+                        minimumElement(nums);
+                    }
+                    else 
+                    {
+                        System.out.println("Please create an array first.");
+                    }
+                    break;
+                case 4:
+                    if(nums!=null)
+                    {
+                        maximumElement(nums);
+                    }
+                    else 
+                    {
+                        System.out.println("Please create an array first.");
+                    }
+                    break;
+                case 5:
+                    if(nums!=null)
+                    {
+                        SumOfElements(nums);
+                    }
+                    else 
+                    {
+                        System.out.println("Please create an array first.");
+                    }
+                    break;
+                case 6:
+                    cont=false;
+                    break;
+                default:
+                    System.out.println("Please enter a proper choice.");
+                    break;
+
+                
+            }
+        }
+        
     }
     /*
      * author : Ali Batu Sarıca
@@ -20,13 +89,21 @@ public class HW1
     {
         System.out.println("Enter array size: ");
         int size = input.nextInt();
-        nums = new int[size];
+        if(size>0)
+        {
+            nums = new int[size];
 
-        for(int i = 0; i < nums.length; i++){
+            for(int i = 0; i < nums.length; i++){
             nums[i] = random.nextInt(101);
-        }
+            }
 
-        System.out.println("A randomized array of size " + size + " has been created.  ");
+            System.out.println("A randomized array of size " + size + " has been created.  ");
+        }
+        else
+        {
+            System.out.println("An array's size can not be zero or negative, please enter a proper size.");
+        }
+        
     }
 
 /*
@@ -83,6 +160,7 @@ public class HW1
             {
                 System.out.print(" " + (nums[k] - average));
             }
+            System.out.println();
         }
         else
         {
