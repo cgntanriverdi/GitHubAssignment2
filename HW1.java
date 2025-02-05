@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,10 +29,35 @@ public class HW1
         System.out.println("A randomized array of size " + size + " has been created.  ");
     }
 
-    // Çağan Tanrıverdi
-    public static void taskC()
+/*
+     * @author : Ali Çağan Tanrıverdi
+     * Date: 05.02.2025
+     * Methods for finding and printing the minimum and the maximum integer in the given array.
+     */
+    public static void minimumElement ( int[] nums )
     {
-        
+        int minValue = nums[0];
+        for ( int i = 1 ; i < nums.length ; i++ )
+        {
+            if ( minValue > nums[i] )
+            {
+                minValue = nums[i];
+            } 
+        }
+        System.out.println("The minimum value in the array is: " + minValue);
+    }
+
+    public static void maximumElement ( int[] nums )
+    {
+        int maxValue = nums[0];
+        for ( int i = 1 ; i < nums.length ; i++ )
+        {
+            if ( maxValue < nums[i] )
+            {
+                maxValue = nums[i];
+            }
+        }
+        System.out.println("The maximum value in the array is: " + maxValue);
     }
 
     // Kaan Uz
