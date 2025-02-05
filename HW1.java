@@ -1,19 +1,34 @@
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class HW1
 {
+    private static int[] nums;
+    private static Scanner input = new Scanner(System.in);
+    private static Random random = new Random();
     // Task B (Main) - Baran Elkansu
     public static void main(String [] args)
     {
 
     }
-
-    // Ali Batu Sarıca
-    public static void taskA()
+    /*
+     * author : Ali Batu Sarıca
+     * Date: 05.02.2025
+     * Method for creating a randomized array in the range [0,100]
+     */
+    public static void createRandomArray()
     {
-        
-    }
+        System.out.println("Enter array size: ");
+        int size = input.nextInt();
+        nums = new int[size];
 
+        for(int i = 0; i < nums.length; i++){
+            nums[i] = random.nextInt(101);
+        }
+
+        System.out.println("A randomized array of size " + size + " has been created.  ");
+    }
 
     // Çağan Tanrıverdi
     public static void taskC()
