@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class HW1
 {
@@ -7,5 +6,8 @@ public class HW1
 
     }
 
-    public
+    public static void d()
+    {
+        
+    }
 }
